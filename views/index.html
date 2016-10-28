@@ -1,21 +1,88 @@
 <!doctype html>
 <html>
     <head>
-          <title>angular project</title>
+        <title>angular project</title>
+        <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
     </head>
     <body ng-app="appName">
         <h1>learning scope variables</h1>
        
         <div ng-controller="appCtrl">
+            
+                <h1>fron app ctrl</h1>
              
-            this is for app controller {{header}}
-            {{::header}}
-            <button ng-click="test()">change header</button>
-        
+            two way data biding {{header}}<br>
+            one way data biding {{::header}}<br>
+            <button ng-click="test()" class="btn btn-primary">change header</button>  
+            
         </div>
+        
+        <div ng-controller="personCtrl">
+            <h1>for person controller</h1>
+            <div class="row">
+                <div class = "col-md-2">
+                    <input type="text" ng-model="personModel.firstName"
+                    placeholder = "enter firstName">
+                </div>
+                <div class = "col-md-2">
+                    <input type="text" ng-model="personModel.lastName"
+                    placeholder = "enter lastName">
+                </div>  
+                <div class = "col-md-2">
+                    <input type="text" ng-model="personModel.address"
+                    placeholder = "enter address">
+                </div>
+                <div class = "col-md-2">
+                    <input type="text" ng-model="personModel.phoneNumber"
+                    placeholder = "enter phoneNumber">
+                </div>
+            </div>
+               <div class = "row">
+                    <div class= "col-md-2">
+                        <label>firstName</label>
+                    </div>
+                    <div class= "col-md-2">
+                        <label>lastName</label>
+                    </div>
+                   <div class= "col-md-2">
+                        <label>address</label>
+                    </div>
+                   <div class= "col-md-2">
+                        <label>phoneNumber</label>
+                    </div>
+                
+                </div>
+                <div class ="row">
+                    <div class = "col-md-2">
+                       {{personModel.firstName}}
+                    </div>
+                    <div class = "col-md-2">
+                       {{personModel.lastName}}
+                   </div>
+                    <div class = "col-md-2">
+                       {{personModel.address}}
+                   </div>
+                      <div class = "col-md-2">
+                       {{personModel.phoneNumber}}
+                   </div>
+                </div>
+            
+            <div ng-show ="forNgShow">
+                        this content is for testing ng show
+            </div>
+            
+            <div ng-show ="forNgIf">
+                 this content is for testing ng if 
+            </div>
+            <button ng-click="toggleForShow()"class="btn btn-warning">ng-show toggle</button>
+            <button ng-click="toggleForIf()"class="btn btn-danger">ng-if toggle</button>
+            
+            </div>   
         <script type="text/javascript" src="/node_modules/angular/angular.js"></script>
         <script type="text/javascript" src ="/js/app.js"></script>
         <script type="text/javascript" src = "/js/controlers/appCtrl.js"></script>
+        <script type="text/javascript" src = "/js/controlers/personCtrl.js"></script>
+        
     </body>
 
 
